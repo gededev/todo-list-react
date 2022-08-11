@@ -1,6 +1,7 @@
 import { Dispatch, FormEvent, SetStateAction } from "react"
 import Task from "../../models/Task"
 import { useForm } from "react-hook-form";
+import "./TaskForm.css"
 
 interface TaskFormProps {
     setter : Dispatch<SetStateAction<Task[]>>
@@ -9,6 +10,8 @@ interface TaskFormProps {
 interface formData {
     task: string
 }
+
+//Long term improvements - Controlled input for the input text - Error handling and form validation
 
 const TaskForm: React.FC<TaskFormProps> = ({setter})=>{
     
@@ -23,9 +26,11 @@ const TaskForm: React.FC<TaskFormProps> = ({setter})=>{
     return (
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input defaultValue="" placeholder="ex: Do laundry"{...register("task")} />
-        
-        <button type="submit">Add task</button>
+        <h1>Add something 🗃️</h1>
+        <div className="task-input">
+          <input defaultValue="" placeholder="ex: Do laundry"{...register("task")} />
+          <button className="add" type="submit">Add task</button>
+        </div>
       </form>
     );
 }

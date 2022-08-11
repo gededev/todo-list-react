@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
-import { setTextRange } from "typescript";
 import Task from "../../models/Task"
+import './TaskElement.css'
+
 
 interface TaskProps {
     taskElement: Task;
@@ -8,11 +8,12 @@ interface TaskProps {
 }
 
 const TaskElement: React.FC<TaskProps> = ({taskElement,setter})=>{
+    const {task, done} = taskElement
     return (
-    <div>
-        <p>{taskElement.task}</p>
-        <button  onClick={setter}>
-            <i className="material-icons">{taskElement.done ? "check_circle" : "circle"}</i>
+    <div className="task">
+        <p>• {task}</p>
+        <button className="toggle"  onClick={setter}>
+            <i className={`material-icons ${done? "done" : ""}`}>{done ? "check_circle" : "circle"}</i>
         </button>
     </div>
     )

@@ -1,0 +1,21 @@
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+}
+
+.toggle {
+    appearance: none;
+    background-color: white;
+    border-radius: 99px;
+    padding: 0.3rem;
+}
+
+.toggle:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+.done {
+    color: rgb(70, 180, 70);
+}
