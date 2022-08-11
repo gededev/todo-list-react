@@ -11,6 +11,13 @@ import Task from './models/Task';
 function App() {
   const [tasks, setTasks] = useState<Task[]>(()=> getLocalTasks()) //should be replaced by a setter on a useEffect with an empty dependency array to launch a service to get the tasks when connected to API
 
+  /*TODO: Fetch data from API
+  
+  useEffect(()=>{
+  },[])
+
+  */
+
   useEffect(()=>{
     saveLocalTasks()
   },[tasks])
