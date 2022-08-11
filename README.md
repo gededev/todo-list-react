@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# ToDo List React TS POC
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 

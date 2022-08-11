@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import TaskForm from './components/TaskForm/TaskForm';
+import TaskList from './components/TaskList/TaskList';
+import Task from './models/Task';
+
+//Local Storage Idea coming from Dev Ed : https://www.youtube.com/watch?v=pCA4qpQDZD8&ab_channel=DevEd
+//Way to have a "persistent data" instead of using static mock data. Should be replaced by an API usage through service with a back end, like Express Js + PostGreSQL (or MongoDB for persistency)
 
 function App() {
+  const [tasks, setTasks] = useState<Task[]>([])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TaskForm setter={setTasks}/>
+      <TaskList tasks={tasks} setter={setTasks}/>
     </div>
   );
 }
